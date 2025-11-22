@@ -1,0 +1,158 @@
+:root{
+  --black: #dcf0e500;
+  font-size: 62.5%;
+}
+.app {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+}
+.LoginLift{
+  width: 100%;
+  height: 100%;
+  background-color: #105063;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Conteudo {
+  max-width: 600px;
+  height: 400px;
+}
+.LoginRaght{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: #fbfaf7;
+}
+.Logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 40%;
+}
+.Logo .logo {
+  height: 80px;
+  margin-bottom: 10px;
+}
+.LoginParagrafo {
+  margin-top: 10px;
+  color: #125f77;;
+}
+.Form{
+  gap:2rem;
+  width: 30rem;
+  display: flex;
+  height: 60%;
+  flex-direction: column;
+}
+.Form input {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid #888;
+  padding-bottom: 10px;
+}
+.Remember {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 50px;
+}
+.Form .RememberPassword{
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 10px;
+}
+.Form .RememberPassword a {
+  text-decoration: none;
+  color: black;
+}
+.Form .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 100%;
+}
+.Form .btnSigin {
+  outline: none;
+  color: #ffff;
+  border-radius: .5rem;
+  background: #105063;
+  width: 250px;
+  padding: 1rem;
+  border: none ;
+  cursor: pointer;
+}
+.Form .btnSigin:hover {
+   background: #105063d5;
+}
+
+@media (max-width: 884px) {
+ .LoginLift{
+  display: none;
+ }
+ .Form .btnSigin {
+  width: 300px;
+}
+}
+/* .Form */
+/* h1 {
+  margin: 0;
+  text-align: center;
+  color: #ffffff;
+}
+.group {
+  background-color: #0474f1;
+  width: 100%;
+  height: 40px;
+  align-items: start;
+} */
+
+/* .group .input {
+  width: 10px !important;
+} 
+/* .group input {
+  padding: 5px 10px;
+  border-radius: 8px;
+  width: 100%;
+  border: 1px solid #ccc;
+  margin-top: 4px;
+} */
+ /*
+Styles
+button {
+  width: 100%;
+  padding: 12px;
+  background: #0474f1;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+button:disabled {
+  background: #7db5ff;
+  cursor: not-allowed;
+}
+
+.link {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #0077ff;
+  cursor: pointer;
+} */
