@@ -1,0 +1,152 @@
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background: #105063;
+  color: #fff;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logoArea {
+  padding: 15px 20px;
+  font-size: 22px;
+  font-weight: bold;
+  border-bottom: 1px solid #3d4250;
+}
+.menuListWrapper {
+    padding-inline-start: 32px;
+}
+.menuList {
+    display: grid;
+  list-style: none;
+
+  padding: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.menuItem {
+    display: flex;
+      border-radius: 8px 0 0 8px;
+ align-items: center;
+  justify-content: start;
+  gap: 12px /*16 * 0.5 = 8px*/;
+  padding: 12px 20px;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 15px;
+  user-select: none;
+}
+
+
+/* .menuItem span {
+    /* font-size: 20px; */
+    /* border: 1px solid red; 
+} */
+
+/* .menuItem span:nth-of-type(1){
+ margin-right: 60px;
+}  */
+
+/* .menuItem span:nth-of-type(3){
+  color: aqua;
+  margin-left: 25px;
+}  */
+ /* .menuItem:last-of-type{
+     /* background-color: #fff;  */
+    /* padding-right: 40px; 
+}  */
+.menuItem:hover {
+  background: #fff;
+  /* border: 1px solid #fff; */
+  width: 100%;
+  color: #105063;
+}
+
+/* .menuItem.isActive {
+    background-color: #fff;
+}
+
+.menuItem.isActive:hover {
+    background-color: #a58282;
+} */
+
+/* .menuItem:last-of-type(1) {
+    color:#105063;
+} */
+
+.menuItem svg {
+  font-size: 18px;
+}
+
+.submenu {
+  list-style: none;
+  padding-left: 50px;
+  background: #d4d7d8d3;
+}
+
+.submenu li {
+  padding: 8px 0;
+  font-size: 14px;
+  cursor: pointer;
+/*   user-select: none;
+ */}
+
+.submenu li:hover {
+  color: #105063;
+}
+
+
+
+
+
+
+
+
+/* .sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #105063;
+    height: 100vh;
+    max-width: 250px;
+    color: #fff;
+}
+.lists {
+    display: flex;
+    flex-direction: column;
+
+    align-items: end;
+    color: #fff;
+    height: 90%;
+    width: 100%;
+    gap: 2px;
+
+}
+.listSide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 90%;
+
+    height: 40px;
+
+    border-radius: 8px 0 0 8px;
+    transition: .5s all;
+    cursor: pointer;
+}
+.listSide:hover {
+    background-color: #ffffff;
+    transition: .5s all;
+    color: #105063;
+}
+.listSide p {
+    font-size: 2rem;
+}
+/* .listSide:nth-of-type(2), .listSide:nth-of-type(3){
+    padding-right: 16px;
+    gap: 25px;
+} */ 

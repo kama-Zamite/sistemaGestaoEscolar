@@ -1,6 +1,9 @@
 :root{
   --black: #dcf0e500;
   font-size: 62.5%;
+
+  /* 1rem == 10px
+  10rem */
 }
 .app {
   display: flex;
@@ -90,7 +93,7 @@
   color: #ffff;
   border-radius: .5rem;
   background: #105063;
-  width: 250px;
+  width: 300px;
   padding: 1rem;
   border: none ;
   cursor: pointer;
