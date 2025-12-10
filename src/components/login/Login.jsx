@@ -29,7 +29,6 @@ export default function Login() {
   return (
     <div className={Styles.app}>
         <div className={Styles.LoginLift}>
-          {/* <div>Conteudo</div>  */}
           <img className={Styles.Conteudo} src={Conteudo} />        
         </div>
         <div className={Styles.LoginRaght}>
@@ -62,7 +61,6 @@ export default function Login() {
               <p>Forgot Password?</p>
             </div>
             <div className={Styles.btn}>
-              {/* <button className={Styles.btnSigin}>Sign in</button> */}
               <button className={Styles.btnSigin} type="submit" disabled={loading}>
                     {loading ? "Entrando..." : "Sign in"}
               </button>

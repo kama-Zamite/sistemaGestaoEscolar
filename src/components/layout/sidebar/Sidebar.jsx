@@ -2,19 +2,18 @@ import { useState } from "react";
 import styles from "./Sidebar.module.css";
 import Img from "../../img/Logo-preview.png";
 import {
-  ChevronDown,
-  ChevronRight,
+  EthernetPort,
+  BookCopy,
+  Presentation,
   UserLock,
   Users,
+  LayoutDashboard,
   CogIcon,
-  User,
+  School,
+  ShieldUser
 } from "lucide-react";
 
 export default function Sidebar() {
-  const [openAdmin, setOpenAdmin] = useState(false);
-  const [openStudent, setOpenStudent] = useState(false);
-  const [openEmployee, setOpenEmployee] = useState(false);
-
   return (
     <aside className={styles.sidebar}>
       <div className={styles.logoArea}>
@@ -26,64 +25,38 @@ export default function Sidebar() {
       </div>
       <div className={styles.menuListWrapper}>
         <ul className={styles.menuList}>
-          {/* <li className={styles.menuItem}>
+           <li className={styles.menuItem}>
             <LayoutDashboard/>
-          <span>Dashboard</span>
-        </li> */}
-
-          <li
-            className={styles.menuItem}
-            onClick={() => setOpenAdmin(!openAdmin)}
-          >
-            <UserLock />
-            <span>Admin</span>
-            {openAdmin ? <ChevronDown /> : <ChevronRight />}
+            <span>Dashboard</span>
           </li>
-
-          {openAdmin && (
-            <ul className={styles.submenu}>
-              <li>
-                {/* <LayoutDashboard/> */}
-                <span>Dashboard</span>
-              </li>
-              <li>Admin Dashboard</li>
-              <li>Add Student</li>
-              <li>Add Employee</li>
-            </ul>
-          )}
-
-          <li
-            className={`${styles.menuItem} ${styles.isActive}`}
-            onClick={() => setOpenStudent(!openStudent)}
-          >
-            <User className={`${styles.icon}`} />
-            <span>Student</span>
-            {openStudent ? <ChevronDown /> : <ChevronRight />}
-          </li>
-
-          {openStudent && (
-            <ul className={`${styles.submenu}`}>
-              <li>Student Details</li>
-              <li>Enroll Student</li>
-            </ul>
-          )}
-
-          <li
-            className={styles.menuItem}
-            onClick={() => setOpenEmployee(!openEmployee)}
-          >
+           <li className={styles.menuItem}>
             <Users />
-            <span>Employee</span>
-            {openEmployee ? <ChevronDown /> : <ChevronRight />}
+            <span>Alunos</span>
           </li>
-
-          {openEmployee && (
-            <ul className={styles.submenu}>
-              <li>Teacher List</li>
-              <li>Add Teacher</li>
-            </ul>
-          )}
-
+           <li className={styles.menuItem}>
+            <UserLock />
+            <span>Professores</span>
+          </li>
+           <li className={styles.menuItem}>
+            <Presentation />
+            <span>Turmas & Disciplinas</span>
+          </li>
+           <li className={styles.menuItem}>
+            <School />
+            <span>Notas & Avaliações</span>
+          </li>
+           <li className={styles.menuItem}>
+            <BookCopy />
+            <span>Relatórios Inteligentes</span>
+          </li>
+           <li className={styles.menuItem}>
+            <EthernetPort />
+            <span>Comunicados</span>
+          </li>
+           <li className={styles.menuItem}>
+            <ShieldUser />
+            <span>Administração do Sistema </span>
+          </li>
           <li className={styles.menuItem}>
             <CogIcon />
             <span>Configurações</span>

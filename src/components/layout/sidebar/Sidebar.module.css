@@ -59,7 +59,7 @@
     /* padding-right: 40px; 
 }  */
 .menuItem:hover {
-  background: #fff;
+  background: #f4f6f9;
   /* border: 1px solid #fff; */
   width: 100%;
   color: #105063;
@@ -84,7 +84,7 @@
 .submenu {
   list-style: none;
   padding-left: 50px;
-  background: #d4d7d8d3;
+  /* background: #d4d7d8d3; */
 }
 
 .submenu li {
@@ -95,7 +95,7 @@
  */}
 
 .submenu li:hover {
-  color: #105063;
+  color: #8f989b;
 }
 
 
