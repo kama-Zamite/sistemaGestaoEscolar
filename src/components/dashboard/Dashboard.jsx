@@ -87,76 +87,108 @@ export default function Dashboard() {
               </div>
             </section>
 
-            <section className={styles.grid}>
-              <div className={styles.chartCard}>
-                <h3>Matrículas (ano)</h3>
-                <ResponsiveContainer width="100%" height={220}>
-                  <LineChart data={enrollData} margin={{ top: 10, right: 20, left: 0, bottom: 0 }}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="month" />
-                    <YAxis />
-                    <Tooltip />
-                    <Line type="monotone" dataKey="enrolls" stroke="#0077ff" strokeWidth={3} dot={{ r: 2 }} />
-                  </LineChart>
-                </ResponsiveContainer>
-              </div>
+            {/* Aqui em baixo esta a parte que deve ser melhorada*/}  
+            <div className={styles.container}>
 
-              <div className={styles.chartCard}>
-                <h3>Alunos por Curso</h3>
-                <ResponsiveContainer width="100%" height={220}>
-                  <BarChart data={studentsByCourse} margin={{ top: 10, right: 20, left: 0, bottom: 0 }}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <Tooltip />
-                    <Bar dataKey="value" fill="#00C49F" />
-                  </BarChart>
-                </ResponsiveContainer>
-              </div>
+  {/* COLUNA PRINCIPAL */}
+  <div className={styles.mainColumn}>
+    
+    {/* CARD: MATRÍCULAS */}
+    <div className={styles.card}>
+      <h3>Matrículas (ano)</h3>
+      <ResponsiveContainer width="100%" height={260}>
+        <LineChart data={enrollData} margin={{ top: 10, right: 20 }}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="month" />
+          <YAxis />
+          <Tooltip />
+          <Line 
+            type="monotone" 
+            dataKey="enrolls" 
+            stroke="#0077ff" 
+            strokeWidth={3} 
+            dot={{ r: 3 }}
+          />
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
 
-              <div className={styles.smallCard}>
-                <h3>Distribuição</h3>
-                <ResponsiveContainer width="100%" height={220}>
-                  <PieChart>
-                    <Pie data={studentsByCourse} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={70} label>
-                      {studentsByCourse.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                      ))}
-                    </Pie>
-                    <Tooltip />
-                    <Legend />
-                  </PieChart>
-                </ResponsiveContainer>
-              </div>
-            </section>
+    {/* CARD: TABELA */}
+    <div className={styles.card}>
+      <h3>Alunos Destaque</h3>
 
-            <section className={styles.tableSection}>
-              <h3>Últimos inscritos</h3>
-              <div className={styles.tableWrap}>
-                <table className={styles.table}>
-                  <thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>Nome</th>
-                      <th>Curso</th>
-                      <th>Turma</th>
-                      <th>Inscrito em</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {recentStudents.map((s) => (
-                      <tr key={s.id}>
-                        <td>{s.id}</td>
-                        <td>{s.nome}</td>
-                        <td>{s.curso}</td>
-                        <td>{s.turma}</td>
-                        <td>{s.inscrito}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </section>
+      <div className={styles.tableWrap}>
+        <table className={styles.table}>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Curso</th>
+              <th>Turma</th>
+              <th>Inscrito em</th>
+            </tr>
+          </thead>
+          <tbody>
+            {recentStudents.map((s) => (
+              <tr key={s.id}>
+                <td>{s.id}</td>
+                <td>{s.nome}</td>
+                <td>{s.curso}</td>
+                <td>{s.turma}</td>
+                <td>{s.inscrito}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+
+  {/* COLUNA LATERAL */}
+  <div className={styles.sideColumn}>
+
+    {/* CARD: DISTRIBUIÇÃO */}
+    <div className={styles.card}>
+      <h3>Distribuição por Curso</h3>
+      <ResponsiveContainer width="100%" height={240}>
+        <PieChart>
+          <Pie
+            data={studentsByCourse}
+            cx="50%"
+            cy="50%"
+            outerRadius={80}
+            dataKey="value"
+            label
+          >
+            {studentsByCourse.map((entry, index) => (
+              <Cell key={index} fill={COLORS[index % COLORS.length]} />
+            ))}
+          </Pie>
+          <Tooltip />
+          <Legend />
+        </PieChart>
+      </ResponsiveContainer>
+    </div>
+
+    {/* CARD: BARRAS */}
+    <div className={styles.card}>
+      <h3>Alunos por Curso</h3>
+      <ResponsiveContainer width="100%" height={240}>
+        <BarChart data={studentsByCourse} margin={{ top: 10 }}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Bar dataKey="value" fill="#00C49F" radius={[5, 5, 0, 0]} />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
+
+  </div>
+</div>
+
 
             {/* <footer className={styles.footer}>
               <small>© {new Date().getFullYear()} Escola — Todos os direitos reservados</small>
